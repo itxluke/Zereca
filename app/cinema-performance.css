@@ -1,0 +1,27 @@
+/* Keep compositor hints on the current readable chapter only. */
+.cinema-film .film-copy h1,
+.cinema-film .film-copy h2,
+.cinema-film .film-copy .film-subtitle,
+.cinema-film .film-copy .film-status,
+.cinema-film .film-copy .text-link,
+.cinema-film .film-copy .film-note { will-change: auto; }
+.cinema-film .film-copy.is-current:not(.in-passage) h1,
+.cinema-film .film-copy.is-current:not(.in-passage) h2,
+.cinema-film .film-copy.is-current:not(.in-passage) .film-subtitle,
+.cinema-film .film-copy.is-current:not(.in-passage) .film-status,
+.cinema-film .film-copy.is-current:not(.in-passage) .text-link,
+.cinema-film .film-copy.is-current:not(.in-passage) .film-note { will-change: transform; }
+@media (prefers-reduced-motion: reduce) {
+ .cinema-film .film-copy.is-current h1,
+ .cinema-film .film-copy.is-current h2,
+ .cinema-film .film-copy.is-current .film-subtitle,
+ .cinema-film .film-copy.is-current .film-status,
+ .cinema-film .film-copy.is-current .text-link,
+ .cinema-film .film-copy.is-current .film-note { will-change: auto !important; }
+}
+/* Channel links stay in the document footer, beyond the final cinematic frame. */
+.film-socials { display: flex; flex-wrap: wrap; gap: 22px; }
+.film-socials a { color: #b8aba0; font-size: 11px; text-decoration: none; }
+.film-socials a:hover, .film-socials a:focus-visible { color: #eee9e1; }
+.film-socials a:focus-visible { outline: 1px solid #d5bbb1; outline-offset: 7px; }
+.film-motion-controls > a { color: inherit; text-decoration: none; font: inherit; }

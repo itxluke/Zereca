@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "snapshotCheckedAt": "2026-10-02",
+  "freshness": "bundled-reviewed-snapshot",
+  "projects": [
+    {
+      "id": "devs",
+      "title": "Zereca Engine",
+      "status": "development",
+      "summary": "An Android engine currently in development.",
+      "updatedAt": null
+    },
+    {
+      "id": "records",
+      "title": "Zereca Records",
+      "status": "music",
+      "summary": "Original music and visual stories from Zereca Records.",
+      "updatedAt": null,
+      "publicLinks": [
+        {
+          "label": "YouTube",
+          "url": "https://www.youtube.com/channel/UC0e5PasL8RErVT1ZHKBYIAA"
+        }
+      ]
+    },
+    {
+      "id": "unclassified",
+      "title": "Red Thread Archive",
+      "status": "development",
+      "summary": "A story world from Zereca Unclassified.",
+      "updatedAt": null,
+      "publicLinks": [
+        {
+          "label": "YouTube",
+          "url": "https://www.youtube.com/@ZerecaUnclassified"
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "title": "Unfinished possibilities",
+      "status": "research",
+      "summary": "Experiments, ideas, and questions beyond the familiar.",
+      "updatedAt": null
+    },
+    {
+      "id": "unknown",
+      "title": "Behind the veil",
+      "status": "undisclosed",
+      "summary": "Not everything inside Zereca has a name yet.",
+      "updatedAt": null
+    }
+  ],
+  "completedStudies": [
+    {
+      "id": "opening-study",
+      "title": "The opening study",
+      "status": "completed-study",
+      "summary": "A finished Threshold-to-Devs scroll prototype for review. The wider website continues in development.",
+      "artifactUrl": "/assets/opening-motion-proof.mp4",
+      "updatedAt": null
+    }
+  ]
+}

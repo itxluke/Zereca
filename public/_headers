@@ -1,0 +1,11 @@
+/assets/films/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/assets/book/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/assets/models/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/assets/unwritten-idle-v2.glb
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

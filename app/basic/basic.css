@@ -1,0 +1,20 @@
+.basic-world{background:#0b0b0d;color:#e7e0d6;min-height:100svh;padding:36px 7vw 48px;font-family:"Zereca Label",Arial,sans-serif}
+.basic-header,.basic-footer{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.basic-header .brand{position:static;display:flex;gap:12px;align-items:center;font-size:14px;letter-spacing:.14em}
+.basic-header nav,.basic-footer nav{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:#b7aea4}
+.basic-world a:focus-visible{outline:1px solid #cfb8a0;outline-offset:6px}
+.basic-introduction{padding:15vh 0 12vh;max-width:1000px}
+.basic-introduction h1{font:400 clamp(48px,7.8vw,126px)/1.03 "Zereca Display",Georgia,serif;margin:24px 0 32px;letter-spacing:-.035em}
+.basic-introduction em{color:#b29b84}.basic-introduction>p:last-child{color:#b7aea4;font-size:17px}
+.basic-projects{display:grid;grid-template-columns:1fr 1fr;gap:0 6vw}
+.basic-world h2{font:400 clamp(28px,3.5vw,52px)/1.1 "Zereca Display",Georgia,serif;letter-spacing:-.03em}
+.basic-projects>h2{grid-column:1/-1;margin:0 0 32px}
+.basic-projects article,.basic-completed article{border-top:1px solid #c4b9a427;padding:36px 0 44px}
+.basic-world article h3{font:400 clamp(24px,2.5vw,38px)/1.15 "Zereca Display",Georgia,serif;margin:16px 0}
+.basic-world article p:not(.eyebrow){font-size:15px;color:#aaa299;line-height:1.8;max-width:54ch}
+.basic-status{font-size:11px;letter-spacing:.08em;color:#bfa487}
+.basic-world article a,.basic-invitation>a{display:inline-block;font-size:14px;border-bottom:1px solid #987d653f;padding:8px 0;margin-top:12px;color:#d5c1aa}
+.basic-completed{margin-top:8vh}.basic-completed h2{margin-bottom:32px}
+.basic-invitation{padding:12vh 0;border-top:1px solid #c4b9a427;margin-top:6vh}.basic-invitation h2{font-size:clamp(44px,6vw,90px);margin:20px 0}.basic-invitation p{color:#a89f94;line-height:1.7}
+.basic-footer{border-top:1px solid #c4b9a427;padding-top:32px;font-size:12px;color:#aaa299}
+@media(max-width:700px){.basic-world{padding:28px 7vw 36px}.basic-header nav{gap:18px}.basic-projects{grid-template-columns:1fr}.basic-introduction{padding:12vh 0 9vh}.basic-footer nav{gap:18px}}

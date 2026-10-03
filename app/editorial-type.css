@@ -1,0 +1,249 @@
+@font-face {
+ font-family:"Zereca Condensed";
+ font-style:normal;
+ font-weight:500;
+ font-display:swap;
+ src:url('/fonts/zereca-condensed.woff') format('woff');
+}
+:root {
+ --font-reading:"Zereca Label",Arial,sans-serif;
+ --font-engraved:"Zereca Display",Georgia,serif;
+ --font-machined:"Zereca Condensed","Arial Narrow",Arial,sans-serif;
+ --type-ink:#ece5d8;
+ --type-muted:#c2b9ab;
+}
+body {font-family:var(--font-reading);font-weight:500;font-synthesis:none}
+h1,h2,h3 {font-family:var(--font-engraved);font-weight:500}
+.eyebrow {font-family:var(--font-reading);font-size:.875rem;letter-spacing:.15em}
+.masthead .brand {font-family:var(--font-reading);font-weight:500;letter-spacing:.22em}
+.masthead nav {font-size:.875rem}
+.masthead .institution-label {font-size:.75rem;letter-spacing:.22em}
+.site-footer p,.journal-footer p {font-size:.875rem;color:var(--type-muted)}
+.film-socials a {font-size:.875rem}
+.motion-controls button,.motion-controls>a,.film-vault-close {font-size:.875rem;min-height:44px}
+
+/* One solid reading layer; its displaced outline belongs to the room's depth. */
+.cinema-film .film-copy {
+ --scene-accent:#c8b69b;
+ width:min(38%,38rem);
+ top:30%;
+}
+.cinema-film .film-copy .eyebrow {
+ font-size:.8125rem;
+ color:#d0c5b6;
+ letter-spacing:.17em;
+ margin-bottom:1.65rem;
+}
+.cinema-film .film-copy :is(h1,h2) {
+ font-family:var(--font-engraved);
+ font-weight:500;
+ font-size:clamp(3.5rem,6.6vw,8.25rem);
+ letter-spacing:-.045em;
+ line-height:1.03;
+ margin-bottom:1.6rem;
+ overflow:visible;
+}
+.scene-title-line {position:relative;display:block;isolation:isolate}
+.scene-title-ink {position:relative;z-index:1;display:block}
+.scene-title-response {margin-top:.025em}
+.scene-title-response .scene-title-ink {color:var(--scene-accent)}
+.scene-title-echo {
+ position:absolute;inset:0;z-index:0;
+ color:transparent;
+ -webkit-text-stroke:.65px var(--scene-accent);
+ opacity:.28;
+ transform:translate3d(var(--film-echo-x,18px),var(--film-echo-y,-16px),0);
+ -webkit-mask-image:linear-gradient(110deg,transparent 8%,#000 42%,transparent 96%);
+ mask-image:linear-gradient(110deg,transparent 8%,#000 42%,transparent 96%);
+ pointer-events:none;user-select:none;
+}
+.scene-title-response .scene-title-echo {font-style:italic;opacity:.18}
+.cinema-film .film-copy .film-subtitle {font-size:1rem;line-height:1.75;max-width:31ch;color:#d1c7b9;text-wrap:pretty}
+.cinema-film .film-copy .film-status {font-size:.875rem;letter-spacing:.045em;color:#c2b4a4;margin-top:1.2rem}
+.cinema-film .film-copy .film-status>span {width:18px;height:1px;background:#a56962}
+.cinema-film .film-copy .text-link {font-size:.875rem;min-height:44px;margin-top:1rem;display:inline-flex;align-items:center;padding:.4rem 0;border-color:#ab95806b}
+.cinema-film .film-copy .film-note {font-size:.75rem;line-height:1.6;max-width:36ch;color:#b7aa9a;margin-top:.65rem}
+.cinema-film .film-copy[data-scene=threshold] h1 {font-size:clamp(4rem,7.6vw,9rem)}
+.cinema-film .film-copy[data-scene=devs] {--scene-accent:#d0bfc0}
+.cinema-film .film-copy[data-scene=devs] h2 {
+ font-family:var(--font-machined);text-transform:uppercase;
+ font-size:clamp(3.6rem,6.8vw,7.1rem);letter-spacing:-.015em;line-height:1;
+}
+.cinema-film .film-copy[data-scene=devs] .scene-title-response :is(em,.scene-title-echo) {font-style:normal}
+.cinema-film .film-copy[data-scene=unclassified] {--scene-accent:#c4a58a;top:29%;width:min(35%,36rem)}
+.cinema-film .film-copy[data-scene=unclassified] h2 {font-size:clamp(3.8rem,6.5vw,8rem)}
+.cinema-film .film-copy[data-scene=records] {--scene-accent:#d4bd91;width:min(38%,38rem);top:29%}
+.cinema-film .film-copy[data-scene=records] h2 {font-size:clamp(3.7rem,6vw,7.4rem);letter-spacing:-.035em;line-height:1.08}
+.cinema-film .film-copy[data-scene=records] .scene-title-response {font-size:.9em}
+.cinema-film .film-copy[data-scene=research] {--scene-accent:#babec9}
+.cinema-film .film-copy[data-scene=research] h2 {font-family:var(--font-machined);font-size:clamp(4rem,7.3vw,8rem);letter-spacing:-.01em;line-height:1.02}
+.cinema-film .film-copy[data-scene=research] .scene-title-response :is(em,.scene-title-echo) {font-style:normal}
+.cinema-film .film-copy[data-scene=research] .scene-title-line:first-child .scene-title-ink {
+ color:#d8d9e522;-webkit-text-stroke:1px #d8d9e5;
+}
+.cinema-film .film-copy[data-scene=assembly] {width:min(36%,32rem);top:auto;bottom:24%;--scene-accent:#baa89b}
+.cinema-film .film-copy[data-scene=assembly] h2 {font-size:clamp(3.5rem,5.8vw,6.75rem)}
+
+/* Foreground contours end in the empty left margin; the filmed subject stays clear. */
+.cinema-media .cinema-depth-word {
+ font-family:var(--font-engraved);font-weight:500;
+ font-size:clamp(9rem,22vw,27rem);letter-spacing:-.04em;line-height:1;
+ left:9%;top:8%;color:#d3c5ac45;
+}
+.cinema-media .cinema-media-devs .cinema-depth-word {
+ font-family:var(--font-machined);font-size:clamp(11rem,29vw,33rem);letter-spacing:.015em;top:5%;
+}
+.cinema-media .cinema-media-atlas .cinema-depth-word {
+ font-size:clamp(8rem,15vw,22rem);letter-spacing:-.025em;top:13%;left:3%;
+}
+.cinema-media .cinema-depth-contour {
+ z-index:3;color:transparent;-webkit-text-stroke:1px #d3c5ac66;
+ -webkit-mask-image:linear-gradient(90deg,#000,#000 16%,transparent 38%);
+ mask-image:linear-gradient(90deg,#000,#000 16%,transparent 38%);
+}
+.cinema-media .cinema-media-records .cinema-depth-contour {opacity:.5}
+.cinema-film .film-margin {font-size:.75rem;color:#b9aa98;letter-spacing:.15em}
+.cinema-film .film-rooms-toggle {font-size:.875rem;letter-spacing:.03em;min-height:44px}
+.cinema-film .film-rooms-toggle>span:first-child {font-size:.75rem;font-variant-numeric:tabular-nums;letter-spacing:.07em;color:#b9aa98}
+.cinema-film .film-scroll-hint {font-size:.75rem;letter-spacing:.1em}
+.cinema-film .film-room-index a {font-size:.875rem;min-height:44px;align-items:center}
+.cinema-film .film-room-index a>span:first-child,.cinema-film .film-room-index a>span:last-child {font-size:.75rem;color:#b8aa97}
+
+/* The book's engraved labels are supplied artwork. Its live controls share that voice. */
+.book-selection .book-loading-caption {font-family:var(--font-reading);font-size:.75rem;letter-spacing:.075em;line-height:1.6;color:#d4c5b0}
+.book-selection .book-choice-label {font-family:var(--font-engraved);font-weight:500}
+.book-selection .book-choice-detail {font-size:.875rem;line-height:1.5}
+.boot-masthead>span:last-child,.boot-footer {font-size:.75rem;letter-spacing:.13em}
+.boot-masthead .brand {font-size:.875rem}
+.boot-ritual-content h1 {font-family:var(--font-engraved);font-size:clamp(3.5rem,6.2vw,6rem);line-height:1.08;letter-spacing:-.035em}
+.boot-ritual-content h1 em {font-family:var(--font-engraved);font-style:italic;color:#c4ae96}
+.boot-ritual-content .eyebrow {font-size:.75rem}
+.boot-ritual-content .boot-ritual-hint {font-size:.875rem;max-width:34ch;line-height:1.6;color:#c6b8a6}
+.boot-ritual-content .boot-ritual-actions button {font-size:.875rem;min-height:44px}
+.boot-ritual-content .boot-loading-line {font-size:.75rem;letter-spacing:.07em}
+
+.unwritten-invitation .unwritten-copy h2 {
+ font-family:var(--font-engraved);font-weight:500;
+ font-size:clamp(4rem,7.8vw,9rem);line-height:1.025;letter-spacing:-.04em;
+}
+.unwritten-invitation .unwritten-copy h2>span:last-child {font-style:italic;color:#bd9180}
+.unwritten-invitation .unwritten-copy>.eyebrow {font-size:.8125rem;letter-spacing:.22em;color:#c2afa1}
+.unwritten-invitation .unwritten-intro {font-size:1rem;line-height:1.75;color:#d0bdae}
+.unwritten-invitation .unwritten-link {font-size:1rem;letter-spacing:0;min-height:48px;border-bottom-color:#a56d60}
+.unwritten-invitation .unwritten-instruction {font-size:.75rem;letter-spacing:.13em;color:#b7a496}
+.unwritten-invitation .unwritten-take {font-size:.875rem;letter-spacing:.03em}
+
+/* The gallery and Basic route remain part of the same institution. */
+:root .orbital-gallery {font-family:var(--font-reading)}
+:root .orbital-copy :is(h1,h2),:root .orbital-card-caption>span,:root .orbital-strip-label,
+:root .orbital-engine-identity>p,:root .orbital-research-object>span {font-family:var(--font-engraved);font-weight:500}
+:root .orbital-backword {font-family:var(--font-machined);font-weight:500;color:transparent;-webkit-text-stroke:1px #c8bca72e;letter-spacing:.02em}
+:root .orbital-collection button {font-family:var(--font-engraved);font-size:1.25rem}
+:root .orbital-eyebrow,:root .orbital-status,:root .orbital-note,:root .orbital-material,
+:root .orbital-mode-control button,:root .orbital-project-index>a,:root .orbital-primary-link,
+:root .orbital-evidence-link,:root .orbital-card-number,:root .orbital-card-caption>small {
+ font-family:var(--font-reading);font-size:.875rem;line-height:1.65;
+}
+:root .orbital-eyebrow {font-size:.75rem;letter-spacing:.11em}
+:root .orbital-summary {font-family:var(--font-reading);font-size:1rem;line-height:1.75;max-width:34ch}
+:root .orbital-note {color:#b3aaa2;max-width:38ch}
+:root .orbital-material>span,:root .orbital-collection sup,:root .orbital-visual-meta,
+:root .orbital-navigation>p,:root .orbital-project-index>a>span:first-child {font-family:var(--font-reading);font-size:.75rem;color:#b2a698}
+:root .orbital-card-caption {white-space:normal;gap:.5rem}
+:root .orbital-card-caption>span {font-size:1.625rem;line-height:1.1}
+:root .orbital-card-caption>small {font-size:.75rem;letter-spacing:.04em}
+:root .orbital-visual-meta {bottom:8px;letter-spacing:.05em}
+:root .orbital-navigation button {min-width:44px;min-height:44px}
+:root .orbital-engine-identity>span,:root .orbital-engine-identity>small,
+:root .orbital-signal>span,:root .orbital-motion-proof>span,:root .orbital-research-object>small {
+ font-family:var(--font-reading);font-size:.75rem;line-height:1.5;letter-spacing:.06em;white-space:normal;
+}
+:root .orbital-material {margin-top:1.2rem;letter-spacing:.02em}
+:root .orbital-project-index {gap:.5rem 1.25rem}
+.vault-copy h3,.vault-heading :is(h1,h2),.project-identity>p,.direction-sheet>p {font-family:var(--font-engraved);font-weight:500}
+.vault-status,.vault-index nav,.vault-index nav a>span {font-size:.875rem}
+.basic-world .basic-header nav,.basic-world .basic-footer nav,.basic-world .basic-status {font-size:.875rem;letter-spacing:.02em}
+.basic-world article p:not(.eyebrow) {font-size:1rem}
+.basic-world :is(h1,h2,h3) {font-weight:500}
+.basic-world .basic-introduction em {color:#cbb294}
+
+@media(min-width:861px) and (max-height:780px) {
+ .cinema-film .film-copy {top:25%}
+ .cinema-film .film-copy :is(h1,h2) {font-size:clamp(3.5rem,5.8vw,6rem);line-height:1.04;margin-bottom:1.1rem}
+ .cinema-film .film-copy .eyebrow {margin-bottom:1.2rem}
+ .cinema-film .film-copy .film-note {display:none}
+ .cinema-film .film-copy[data-scene=assembly] {top:auto;bottom:24%}
+ .unwritten-invitation .unwritten-copy h2 {font-size:clamp(3.5rem,7vw,7rem)}
+ .unwritten-invitation .unwritten-copy>.eyebrow {margin-bottom:1.2rem}
+}
+@media(max-width:860px) {
+ .cinema-film .film-copy,.cinema-film .film-copy[data-scene=unclassified],.cinema-film .film-copy[data-scene=records],.cinema-film .film-copy[data-scene=assembly] {
+  left:7%;top:auto;bottom:20%;width:86%;
+ }
+ .cinema-film .film-copy :is(h1,h2) {font-size:clamp(3.2rem,8.5vw,5.25rem);line-height:1.06;margin-bottom:1.1rem}
+ .cinema-film .film-copy[data-scene=devs] h2,.cinema-film .film-copy[data-scene=research] h2 {font-size:clamp(3.5rem,10vw,6rem)}
+ .cinema-film .film-copy .eyebrow {font-size:.75rem;margin-bottom:1.1rem;letter-spacing:.12em}
+ .cinema-film .film-copy .film-subtitle {max-width:35ch}
+ .cinema-film .film-copy .film-note {display:none}
+ .cinema-film .film-copy .film-status {margin-top:.8rem}
+ .cinema-film .film-copy .text-link {margin-top:.6rem}
+ .cinema-media .cinema-depth-contour {display:none}
+ .cinema-media .cinema-depth-word {top:18%;font-size:27vw}
+ .cinema-film .film-rooms-toggle {max-width:70%;gap:.5rem;font-size:.8125rem;letter-spacing:0}
+ .cinema-film .film-scroll-hint {font-size:.75rem;letter-spacing:0;max-width:27%}
+ .unwritten-invitation .unwritten-copy h2 {font-size:clamp(3rem,9.5vw,5rem)}
+ :root .orbital-mode-control button {padding:10px;font-size:.8125rem;min-height:44px}
+ :root .orbital-card-caption>span {font-size:1.375rem}
+ :root .orbital-card-caption>small {font-size:.75rem}
+ .book-selection .book-choice-label {font-size:clamp(1.75rem,6vw,2.25rem)}
+}
+@media(max-width:540px) {
+ .film-masthead .brand {font-size:.8125rem;letter-spacing:.12em}
+ .film-masthead nav {font-size:.875rem;gap:12px}
+ .film-masthead nav a:nth-child(2) {display:none}
+ .cinema-film .film-copy,.cinema-film .film-copy[data-scene=unclassified],.cinema-film .film-copy[data-scene=records] {bottom:21%}
+ .cinema-film .film-copy[data-scene=assembly] {bottom:21%}
+ .cinema-film .film-copy :is(h1,h2) {font-size:clamp(2.8rem,12.8vw,4.2rem)}
+ .cinema-film .film-copy[data-scene=devs] h2 {font-size:clamp(3.15rem,14vw,4.5rem)}
+ .cinema-film .film-copy[data-scene=research] h2 {font-size:clamp(3.25rem,14.5vw,4.5rem)}
+ .cinema-film .film-copy .film-subtitle {font-size:1rem;max-width:32ch;line-height:1.6}
+ .cinema-film .film-rooms-toggle {max-width:100%;font-size:.8125rem}
+ .cinema-film .film-scroll-hint {display:none}
+ .cinema-film .film-foot {bottom:76px}
+ .cinema-film .film-room-index {bottom:148px}
+ .boot-ritual-content h1 {font-size:clamp(3rem,12vw,4rem)}
+ .boot-masthead>span:last-child {display:none}
+ .boot-footer {font-size:.75rem;letter-spacing:.02em;gap:16px}
+ :root .orbital-toolbar {gap:12px;flex-wrap:wrap}
+ :root .orbital-collection>div {gap:20px}
+ :root .orbital-summary {margin-top:1rem;font-size:1rem}
+ :root .orbital-project-links {gap:1rem}
+ :root .orbital-project-index>a {font-size:.875rem}
+ :root .orbital-visual-meta {display:none}
+}
+@media(max-width:860px) and (orientation:portrait) {
+ .unwritten-invitation[data-cinematic=true] .unwritten-copy h2 {font-size:clamp(2rem,7.6vw,3rem);line-height:1.08;letter-spacing:-.02em}
+ .unwritten-invitation[data-cinematic=true] .unwritten-copy>.eyebrow {font-size:.75rem}
+ .unwritten-invitation[data-cinematic=true] .unwritten-intro {font-size:1rem;bottom:calc(124px + env(safe-area-inset-bottom));max-width:85%;line-height:1.5}
+ .unwritten-invitation[data-cinematic=true] .unwritten-link {font-size:.875rem;bottom:calc(66px + env(safe-area-inset-bottom))}
+}
+@media(max-width:860px) and (max-height:680px) {
+ .cinema-film .film-copy :is(h1,h2) {font-size:clamp(2.5rem,7.2vw,3.5rem);line-height:1.04}
+ .cinema-film .film-copy .film-status {display:none}
+ .cinema-film .film-copy .film-subtitle {font-size:1rem;line-height:1.5}
+ .cinema-film .film-copy .eyebrow {margin-bottom:.7rem}
+ .cinema-film .film-copy .text-link {margin-top:.4rem}
+ .cinema-film .film-copy[data-scene=assembly] {bottom:20%}
+ .boot-footer {display:none}
+ .unwritten-invitation[data-cinematic=true] .unwritten-copy h2 {font-size:2rem;top:74px}
+ .unwritten-invitation[data-cinematic=true] .unwritten-copy>.eyebrow {display:none}
+ .unwritten-invitation[data-cinematic=true] .unwritten-intro {display:none}
+}
+@media(prefers-reduced-motion:reduce) {
+ .scene-title-echo,.cinema-media .cinema-depth-contour {display:none}
+}
+.cinema-film[data-motion-preference=disabled] .scene-title-echo {display:none}
+@media(forced-colors:active) {
+ .scene-title-echo,.cinema-depth-word {display:none}
+ .cinema-film .film-copy[data-scene=research] .scene-title-line:first-child .scene-title-ink {color:CanvasText;-webkit-text-stroke:0}
+}
